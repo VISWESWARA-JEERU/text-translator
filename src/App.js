@@ -84,7 +84,7 @@ const App = () => {
 <option value="de">German</option>
 <option value="el">Greek</option>
 <option value="gu">Gujarati</option>
-<option value="ht">Haitian Creole</option>
+  <option value="ht">Haitian Creole</option>
 <option value="ha">Hausa</option>
 <option value="haw">Hawaiian</option>
 <option value="iw">Hebrew</option>
