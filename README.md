@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# Text Translator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple, fast React application for translating text. Built as a client-side UI with a production build included in the `build/` folder. Use this project to prototype translation workflows, integrate translation APIs, or demonstrate UI patterns for text manipulation.
 
-## Available Scripts
+## What this project is
+A small React app that accepts input text and returns translated output. The repository contains full source in `src/` and a ready production build in `build/`. It follows Create React App conventions (entry in `src/index.js`, tests in `src/App.test.js`).
 
-In the project directory, you can run:
+## Why this project
+- Quick way to prototype translation UIs and integrate third‑party translation services.
+- Minimal, production-ready bundle included for static hosting.
+- Good example of React project structure, testing setup and basic styling with CSS.
 
-### `npm start`
+## Key features
+- Text input and translated output
+- Minimal styling and responsive layout
+- Test file included (Jest + React Testing Library)
+- Production-ready `build/` folder for deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project structure
+```
+text-translator/
+├─ build/                    # Production build (static output)
+│  ├─ index.html
+│  ├─ manifest.json
+│  └─ static/...
+├─ public/                   # Public static files used at runtime
+├─ src/
+│  ├─ App.jsx                # Main application component
+│  ├─ index.js               # App bootstrap / ReactDOM render
+│  ├─ index.css              # Global styles
+│  ├─ App.test.js            # Example tests
+│  ├─ reportWebVitals.js
+│  └─ setupTests.js
+├─ package.json              # Scripts & dependencies
+├─ tailwind.config.js        # (present if using Tailwind)
+├─ postcss.config.js
+└─ README.md                 # This file
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
+- Node.js v16+ (LTS recommended)
+- npm v8+ or yarn
 
-### `npm test`
+Verify:
+```powershell
+node --version
+npm --version
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install dependencies (Windows)
+Open PowerShell or CMD in project folder:
+```powershell
+cd c:\Users\Visweswara jeeru\Projects\text-translator
+npm install
+```
+Or with yarn:
+```powershell
+yarn
+```
 
-### `npm run build`
+## Run (development)
+Start the dev server (typical CRA script):
+```powershell
+npm start
+```
+Open http://localhost:3000 (or the address printed in terminal).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If `npm start` is not defined, check `package.json` for the correct dev script:
+```powershell
+npm run dev
+# or
+npm run serve
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Build for production
+Create optimized static files:
+```powershell
+npm run build
+```
+Output is placed in `build/`. Use this folder to deploy to static hosts (Netlify, Vercel, GitHub Pages, S3, etc.).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Preview production build locally
+If `serve` or `preview` script exists:
+```powershell
+npm run preview
+# or
+npx serve -s build
+```
 
-### `npm run eject`
+## Tests
+Run unit tests:
+```powershell
+npm test
+```
+(Uses Jest + React Testing Library if created with CRA.)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Environment / API keys
+If the app integrates an external translation API, add keys to an `.env` file at project root (example):
+```text
+REACT_APP_TRANSLATE_API_KEY=your_api_key_here
+```
+Restart dev server after editing `.env`. Never commit secret keys.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
+- Netlify / Vercel: connect repository and set build command `npm run build`, publish `build/`.
+- GitHub Pages: configure `homepage` in `package.json` and use `gh-pages` or push `build/` to a branch and enable Pages.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Troubleshooting
+- Port in use: run `npm start -- --port 3001` or kill process using the port.
+- Dependencies fail to install:
+  - Delete `node_modules` and lockfile:
+    ```powershell
+    rmdir /s /q node_modules
+    del package-lock.json
+    npm install
+    ```
+- Styles not applied: confirm `index.css` is imported in `src/index.js` and rebuild.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
+1. Fork repository.
+2. Create feature branch: `git checkout -b feat/my-feature`.
+3. Commit changes and open a pull request.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License & Author
+MIT — Visweswara Jeeru  
+Last updated: November 26, 2025
