@@ -2,6 +2,7 @@
   "name": "text-translator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://VISWESWARA-JEERU.github.io/text-translator",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
