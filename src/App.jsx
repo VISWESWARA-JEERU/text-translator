@@ -51,7 +51,7 @@ setTranslatedText(response.data.translation);
           <h1 className="text-3xl text-zinc-900 font-bold ">Text Translator</h1>
            <div className="flex items-center justify-center flex-col gap-y-5">
             <textarea name="input-text" placeholder='Type in English' className="bg-white h-30 w-[500px] border border-slate-700 outline-none rounded-lg text-lg px-5 py-5" onChange={(e)=> setInputText(e.target.value)} />
-            <textarea name="input-text"  className="bg-white h-30 w-[500px] border border-slate-700 outline-none rounded-lg text-lg px-5 py-5" onChange={(e)=> setInputText(e.target.value)} />
+           
             <textarea name="input-text" className="bg-white h-30 w-[500px] border border-slate-700 outline-none rounded-lg text-lg px-5 py-5" value={translatedText} readOnly  />
             </div>
 
